@@ -56,7 +56,7 @@ class List extends React.Component {
   render() {
     return (
       <div>
-        <h1 class="f1">Exercises</h1>
+        <h1 className="f1">Exercises</h1>
         <ul>
         {
           this.state.items.map((item) =>
@@ -66,7 +66,7 @@ class List extends React.Component {
               updateName={this.updateName.bind(this)}
               updateWeight={this.updateWeight.bind(this)} />) }
         </ul>
-        <a href="#" onClick={() => this.addItem('Testing')}>Add</a>
+        <button onClick={() => this.addItem('Testing')}>Add</button>
         <DebugArea data={JSON.stringify(this.state.items, null, 2)}/>
       </div>
     )
@@ -77,10 +77,10 @@ class Item extends React.Component {
   render() {
     return (
       <li>
-        <input class="w-60" type="text"
+        <input className="w-60" type="text"
           value={ this.props.name }
           onChange={(event) => this.props.updateName(this.props.id, event.target.value)}/>
-        <input class="w-20" type="text"
+        <input className="w-20" type="text"
           value={ this.props.weight }
           onChange={(event) => this.props.updateWeight(this.props.id, event.target.value)}/>
       </li>
@@ -91,7 +91,7 @@ class Item extends React.Component {
 class DebugArea extends React.Component {
   render() {
     return (
-      <div class="bg-near-white w-100 f6 mt4 pa2"><pre class="ma0 overflow-x-scroll">{ this.props.data }</pre></div>
+      <div className="bg-near-white w-100 f6 mt4 pa2"><pre className="ma0 overflow-x-scroll">{ this.props.data }</pre></div>
     )
   }
 }
